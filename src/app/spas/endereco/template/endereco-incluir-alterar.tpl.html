@@ -1,0 +1,120 @@
+<style>
+  .btn-space {
+    margin-right: 10px;
+  }
+
+  myModal {
+    z-index: 2147483647;
+  }
+
+  .disabledDiv {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+</style>
+
+<div ng-init="vm.init()">
+  <div
+    class="container"
+    style="overflow-y: auto; overflow-x: hidden; height: 500px;"
+  >
+    <form>
+      <div
+        class="mx-auto"
+        style="width: 300px; padding-left: 60px;"
+      >
+        <h5 class="modal-title">{{vm.tituloTelaEndereco}}</h5>
+      </div>
+      
+        <div class="form-group">
+          <label for="logradouroEndereco">Logradouro: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="logradouroEndereco"
+            ng-model=" vm.enderecoModal.logradouro"
+            placeholder="Logradouro"
+            style="width: 350px;"
+            disabled
+          />
+        </div>
+        <div class="form-group"">
+          <label for="complementoEndereco">Complemento: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="complementoEndereco"
+            ng-model=" vm.enderecoModal.complemento"
+            placeholder="Complemento"
+            style="width: 350px;"
+          />
+        </div>
+      <div class="row">
+        <div class="form-group" style="margin-left: 15px;">
+          <label for="localidadeEndereco">Cidade: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="localidadeEndereco"
+            ng-model=" vm.enderecoModal.localidade"
+            placeholder="Cidade"
+            style="width: 350px;"
+            disabled
+          />
+        </div>
+        <div class="form-group" style="margin-left: 15px;">
+          <label for="ufEndereco">UF: </label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="ufEndereco"
+              placeholder="UF"
+              ng-model="vm.enderecoModal.uf"
+              style="width: 60px; height: 38px;"
+              disabled
+            />
+          </div>
+          <!--<input type = "text" id = "ufEndereco" placeholder="UF"
+                   ng-model = "vm.enderecoModal.uf"style="width:60px; height: 38px;"/>-->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bairroEndereco">Bairro: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="bairroEndereco"
+          placeholder="Bairro"
+          style="width: 350px;"
+          ng-model=" vm.enderecoModal.bairro"
+          disabled
+        />
+      </div>
+      <div class="row">
+        <div class="form-group" style="margin-left: 15px;">
+          <label for="cepEndereco">CEP: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="cepEndereco"
+            style="width: 150px;"
+            ui-mask="99999-999"
+            ng-model=" vm.enderecoModal.cep"
+          />
+        </div>
+        <div class="form-group">
+          <button
+            type="button"
+            class="btn btn-primary btn-space"
+            style="margin: 32.5px;"
+            ng-click="vm.pesqCep()"
+          >
+            CEP
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
